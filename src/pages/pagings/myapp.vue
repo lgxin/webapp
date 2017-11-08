@@ -171,11 +171,11 @@
     justify-content: center;
     background: white;
     margin-bottom: 5px;
-    padding:5px 0
   }
 
   .historicalrecord > div {
     width: 20%;
+    padding:5px 0
   }
 
   .historicalrecord > div > p {
@@ -201,7 +201,7 @@
 
   .myorderDetails > div {
     width: 25%;
-    margin:3px 0;
+    padding:3px 0;
   }
 
   .myorderDetails > div > p {
