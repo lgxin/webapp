@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <div class="swipes">
-      <mt-swipe :auto="0">
+      <mt-swipe :auto="4000">
         <mt-swipe-item><img
           src="http://img1.vbooking.net/prd/201507/23/9948374651a9dbce6b5bbc1fbe0088998c2ab615.jpg@230w" alt="">
         </mt-swipe-item>
@@ -20,18 +20,10 @@
       </mt-search>
     </div>
     <div class="Navigation">
-      <div>
-        <p><img src="../../../static/imgs/jingdian.png" alt=""></p>
-        <p>景点</p>
+      <div v-for="item in Navigation" @click="navigation(item.router)">
+        <p><img :src="item.img" alt=""></p>
+        <p>{{item.name}}</p>
       </div>
-      <div><p><img src="../../../static/imgs/jingdian.png" alt=""></p>
-        <p>景点</p></div>
-      <div><p><img src="../../../static/imgs/jingdian.png" alt=""></p>
-        <p>景点</p></div>
-      <div><p><img src="../../../static/imgs/jingdian.png" alt=""></p>
-        <p>景点</p></div>
-      <div><p><img src="../../../static/imgs/jingdian.png" alt=""></p>
-        <p>景点</p></div>
     </div>
     <div class="selects">
       <mt-navbar class="page-part" v-model="selecteds">
@@ -54,10 +46,39 @@
   export default {
     data: function () {
       return {
-        selecteds: '1'
+        value: '',
+        selecteds: '1',
+        Navigation: [{
+          name: '景点',
+          img: require('../../../static/imgs/jingdian.png'),
+          router: '/tourismList'
+        }, {
+          name: '景点',
+          img: require('../../../static/imgs/jingdian.png'),
+          router: '/'
+        }, {
+          name: '景点',
+          img: require('../../../static/imgs/jingdian.png'),
+          router: '/'
+        }, {
+          name: '景点',
+          img: require('../../../static/imgs/jingdian.png'),
+          router: '/'
+        }, {
+          name: '景点',
+          img: require('../../../static/imgs/jingdian.png'),
+          router: '/'
+        }]
       }
     },
-    methods: {}
+    methods: {
+      navigation (value) {
+        console.log(value)
+        this.$router.push(value)
+      }
+    },
+    created () {
+    }
   }
 </script>
 <style>

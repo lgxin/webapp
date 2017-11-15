@@ -10,6 +10,7 @@ import 'mint-ui/lib/style.css'
 import axios from 'axios'
 import $ from 'jquery'
 import './../static/css/style.css'
+import 'lib-flexible/flexible'
 Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false

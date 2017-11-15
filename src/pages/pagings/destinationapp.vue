@@ -57,6 +57,7 @@
   export default {
     data: function () {
       return {
+        value: '',
         items: [
           {name: '分类1'},
           {name: '分类2'},

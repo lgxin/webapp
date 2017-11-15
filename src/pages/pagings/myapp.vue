@@ -62,6 +62,10 @@
       <mt-cell title="关于我们" is-link>
         <span style="color: green"></span>
       </mt-cell>
+      <mt-cell title="退出应用" is-link>
+        <span style="color: green"></span>
+        <mt-switch v-model="switchs" @change="switchd"></mt-switch>
+      </mt-cell>
     </div>
   </div>
 </template>
@@ -69,9 +73,19 @@
 <script>
   export default {
     data: function () {
-      return {}
+      return {
+        switchs: false
+      }
     },
-    methods: {}
+    methods: {
+      switchd () {
+//        console.log(this.switchs)
+        if (this.switchs) {
+          this.$toast('退出应用成功')
+          this.$router.push('/')
+        }
+      }
+    }
   }
 </script>
 <style>
@@ -165,6 +179,7 @@
     border-top: 2px solid #efefef;
     border-bottom: 2px solid #efefef;
   }
+
   .historicalrecord, .myorderDetails {
     width: 100%;
     display: flex;
@@ -175,7 +190,7 @@
 
   .historicalrecord > div {
     width: 20%;
-    padding:5px 0
+    padding: 5px 0
   }
 
   .historicalrecord > div > p {
@@ -201,7 +216,7 @@
 
   .myorderDetails > div {
     width: 25%;
-    padding:3px 0;
+    padding: 3px 0;
   }
 
   .myorderDetails > div > p {
@@ -216,11 +231,17 @@
     /*width:20%;*/
     font-size: 14px;
   }
-  .service a .mint-cell-wrapper{
+
+  .service {
+    margin-bottom: 80px;
+  }
+
+  .service a .mint-cell-wrapper {
     font-size: 14px !important;
   }
-  .historicalrecord>div:active,.myorderDetails>div:active{
-      background:#efefef;
+
+  .historicalrecord > div:active, .myorderDetails > div:active {
+    background: #efefef;
   }
 
 </style>

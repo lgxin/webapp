@@ -54,6 +54,7 @@
   export default {
     data: function () {
       return {
+        value: '',
         selected: '1'
       }
     },
